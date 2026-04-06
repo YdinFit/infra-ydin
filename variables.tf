@@ -21,3 +21,9 @@ variable "storage_container_name" {
   type        = string
   default     = "open-food-facts"
 }
+
+variable "cloudflare_zone_id" {
+  description = "Cloudflare zone ID for ydin.app"
+  type        = string
+  sensitive   = true
+}
