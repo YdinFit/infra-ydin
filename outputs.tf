@@ -6,4 +6,5 @@ output "r2_bucket_name" {
 output "r2_endpoint" {
   description = "S3-compatible endpoint URL for writing to the bucket"
   value       = "https://${var.cloudflare_account_id}.r2.cloudflarestorage.com"
+  sensitive   = true
 }
