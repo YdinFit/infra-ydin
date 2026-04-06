@@ -13,10 +13,11 @@ resource "cloudflare_r2_custom_domain" "catalog" {
 }
 
 resource "cloudflare_ruleset" "r2_access_control" {
-  zone_id = var.cloudflare_zone_id
-  name    = "R2 path access control"
-  kind    = "zone"
-  phase   = "http_request_firewall_custom"
+  zone_id     = var.cloudflare_zone_id
+  name        = "R2 path access control"
+  description = "Restricts access to the R2 bucket to only the /public/ path"
+  kind        = "zone"
+  phase       = "http_request_firewall_custom"
 
   rules = [
     {
